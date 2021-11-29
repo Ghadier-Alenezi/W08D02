@@ -16,4 +16,15 @@ const newRole = (req, res) => {
     });
 };
 
-module.exports = { newRole };
+const roles = (req, res) => {
+  roleModel
+    .find({})
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+
+module.exports = { newRole, roles };

@@ -10,17 +10,6 @@ app.use(cors());
 const roleRouter = require("./routers/routes/role");
 app.use(roleRouter);
 
-// app.get("/roles", (req, res) => {
-//   roleModel
-//     .find({})
-//     .then((result) => {
-//       res.send(result);
-//     })
-//     .catch((err) => {
-//       res.send(err);
-//     });
-// });
-
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
