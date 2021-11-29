@@ -9,10 +9,10 @@ const newRole = (req, res) => {
   newRole
     .save()
     .then((result) => {
-      res.json(result);
+      res.status(201).json(result);
     })
     .catch((err) => {
-      res.send(err);
+      res.status(400).send(err);
     });
 };
 
@@ -20,10 +20,10 @@ const roles = (req, res) => {
   roleModel
     .find({})
     .then((result) => {
-      res.send(result);
+      res.status(200).send(result);
     })
     .catch((err) => {
-      res.send(err);
+      res.status(400).send(err);
     });
 };
 
