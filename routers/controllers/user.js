@@ -35,9 +35,12 @@ const login = (req, res) => {
     .then(async (result) => {
       if (result) {
         if (result.email == email) {
-          const hashedPassword = await bcrypt.compare(password, result.password);
+          const hashedPassword = await bcrypt.compare(
+            password,
+            result.password
+          );
           const payload = {
-            role: result.role
+            role: result.role,
           };
           if (hashedPassword) {
             const token = jwt.sign(payload, secret);
