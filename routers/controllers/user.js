@@ -34,7 +34,7 @@ const login = (req, res) => {
     .findOne({ email: savedEmail })
     .then(async (result) => {
       if (result) {
-        if (result.email == email) {
+        if (result.email == savedEmail) {
           const hashedPassword = await bcrypt.compare(
             password,
             result.password
