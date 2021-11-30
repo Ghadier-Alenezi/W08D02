@@ -1,5 +1,6 @@
 # Basic Auth: 
 ## register user, login user, hashed password, generate token
+---
 packages we use:
 Express to build the server
 > npm i express
